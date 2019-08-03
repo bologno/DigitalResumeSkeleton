@@ -4,7 +4,7 @@ import {ListItem, ListItemIcon, List, Typography, Divider} from 'material-ui';
 import TabContainer from './TabContainer';
 import RadioButtonCheckedIcon from 'material-ui-icons/RadioButtonChecked';
 
-const experienceListItems = (experience) => experience.projects.map(project => 
+const experienceListItems = (experience) => experience.projects.map(project =>
     <ListItem key={project.id} disableGutters={true} className="card__experience">
       <ListItemIcon>
         <RadioButtonCheckedIcon className="card__icon"/>
@@ -31,6 +31,6 @@ const ResumeBodyExperience = ({experiences}) =>
       </List>
     </TabContainer>
   </div>
-  
+
 
 export default ResumeBodyExperience;

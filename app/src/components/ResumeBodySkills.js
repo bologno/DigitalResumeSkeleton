@@ -4,7 +4,7 @@ import {ListItem, ListItemIcon, List} from 'material-ui';
 import TabContainer from './TabContainer';
 import CodeIcon from 'material-ui-icons/Code';
 
-const skillListItems = (skills) => skills.map(skill => 
+const skillListItems = (skills) => skills.map(skill =>
   <ListItem key={skill.replace(/ /g, '')} disableGutters={true} className="card_skills">
     <ListItemIcon>
       <CodeIcon className="card__icon" />

@@ -1,35 +1,26 @@
 
 import React from 'react';
-import {List, Typography} from 'material-ui';
+import {ListItem, ListItemIcon, List, Typography} from 'material-ui';
+import CodeIcon from 'material-ui-icons/Code';
 import TabContainer from './TabContainer';
 import Spacer from './Spacer';
 
 const educationListContainer = (educationList) => educationList.map(education =>
-  <div>
-    <Typography type="headline" component="h2">
-      {education.schoolName}, {education.schoolLocation}
-    </Typography>
-    <div> {education.major} <Spacer /> {education.graduationSemester}{education.graduationYear} </div>
-  </div>
+  <ListItem key={education.replace(/ /g, '')} disableGutters={true} className="card_education">
+    <ListItemIcon>
+      <CodeIcon className="card__icon" />
+    </ListItemIcon>
+    <div className="card__education-text">{education}</div>
+  </ListItem>
 )
 
 const ResumeBodyEducation = ({educationList}) =>
-  <TabContainer>
-    <List>
-      {educationListContainer(educationList)}
-    </List>
-  </TabContainer>
+  <div className='card__content-view'>
+    <TabContainer>
+      <List>
+        {educationListContainer(educationList)}
+      </List>
+    </TabContainer>
+  </div>
 
 export default ResumeBodyEducation;
-
-
-// Sample Education Object
-// educationList = [
-//   {
-//     schoolName: 'Kennesaw State University',
-//     schoolLocation: 'Kennesaw, GA',
-//     major: 'Computer Science',
-//     graduationSemester: 'Fall',
-//     graduationYear: '2016'
-//   },
-// ]
